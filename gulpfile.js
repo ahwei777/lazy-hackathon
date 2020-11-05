@@ -14,6 +14,8 @@ const babel = require('gulp-babel'); // 載入 gulp-babel 套件
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 
+const tinypng = require('gulp-tinypng-compress');
+
 gulp.task('html-minify', () => {
   return gulp.src('src/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
@@ -30,4 +32,14 @@ gulp.task("js-minify", () => {
   return gulp.src('src/typed.js')
   .pipe(uglify())
   .pipe(gulp.dest('dist'))
+});
+
+gulp.task('tinypng', function () {
+	gulp.src('image/*.{png,jpg,jpeg}')
+		.pipe(tinypng({
+			key: 'FKvJ5YffpCSTm8kdCNHR5hXcK8kcFqtt',
+			sigFile: 'images/.tinypng-sigs',
+			log: true
+		}))
+		.pipe(gulp.dest('dist/images'));
 });
