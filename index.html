@@ -13,6 +13,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.3/dist/lazyload.min.js"></script>
   <script src="./dist/jquery-3.5.1.slim.min.js"></script>
+
+  <script src="./dist/webp-detect.js"></script>
   <script src="./dist/main.js"></script>
   <script src="./dist/typed.js"></script>
   
@@ -77,7 +79,10 @@
               交給同組的各位囉！
             </p>
             <div class="team__pic">
-              <img class="lazy" data-src="./image/team_a.jpg" alt="">
+              <picture>
+                <source type="image/webp" data-srcset="./image/webp/team_a.webp">
+                <img class="lazy" data-src="./image/no-webp/team_a.jpg">
+              </picture>
             </div>
             <a class="team__btn" href="">隊伍介紹</a>
           </li>
@@ -87,7 +92,10 @@
               <span class="team__name team__block__name body__section__team__item__name">不要吵我好嗎？</span>
               躺著真的很快樂</p>
             <div class="team__pic">
-              <img class="lazy" data-src="./image/team_b.jpg" alt="">
+              <picture>
+                <source type="image/webp" data-srcset="./image/webp/team_b.webp">
+                <img class="lazy" data-src="./image/no-webp/team_b.jpg">
+              </picture>
             </div>
             <a class="team__btn" href="">隊伍介紹</a>
           </li>
@@ -98,7 +106,10 @@
               來人啊！快救我
             </p>
             <div class="team__pic">
-              <img class="lazy" data-src="./image/team_c.jpg" alt="">
+              <picture>
+                <source type="image/webp" data-srcset="./image/webp/team_c.webp">
+                <img class="lazy" data-src="./image/no-webp/team_c.jpg">
+              </picture>
             </div>
             <a class="team__btn" href="">隊伍介紹</a>
           </li>
@@ -109,7 +120,10 @@
               可以回家了嗎？
             </p>
             <div class="team__pic">
-              <img class="lazy" data-src="./image/team_d.jpg" alt="">
+              <picture>
+                <source type="image/webp" data-srcset="./image/webp/team_d.webp">
+                <img class="lazy" data-src="./image/no-webp/team_d.jpg">
+              </picture>
             </div>
             <a class="team__btn" href="">隊伍介紹</a>
           </li>
@@ -120,7 +134,10 @@
               我媽逼我來的
             </p>
             <div class="team__pic">
-              <img class="lazy" data-src="./image/team_e.jpg" alt="">
+              <picture>
+                <source type="image/webp" data-srcset="./image/webp/team_e.webp">
+                <img class="lazy" data-src="./image/no-webp/team_e.jpg">
+              </picture>
             </div>
             <a class="team__btn" href="">隊伍介紹</a>
           </li>
@@ -131,7 +148,10 @@
               呵呵呵
             </p>
             <div class="team__pic">
-              <img class="lazy" data-src="./image/team_f.jpg" alt="">
+              <picture>
+                <source type="image/webp" data-srcset="./image/webp/team_f.webp">
+                <img class="lazy" data-src="./image/no-webp/team_f.jpg">
+              </picture>
             </div>
             <a class="team__btn" href="">隊伍介紹</a>
           </li>
@@ -244,42 +264,66 @@
         <ul class="judge__nav">
           <li class="judge__item judge__item--test judge__item--show">
             <div class="pic this_is_an_image image123321 image456789">
-              <img src="./image/judge_a.jpg" alt="">
+              <picture>
+                <source type="image/webp" srcset="./image/webp/judge_a.webp">
+                <img src="./image/no-webp/judge_a.jpg">
+              </picture>
             </div>
           </li>
           <li class="judge__item judge__item--test judge__item--show">
             <div class="pic this_is_an_image image123321 image456789">
-              <img src="./image/judge_b.jpg" alt="">
+              <picture>
+                <source type="image/webp" srcset="./image/webp/judge_b.webp">
+                <img src="./image/no-webp/judge_b.jpg">
+              </picture>
             </div>
           </li>
           <li class="judge__item judge__item--test judge__item--show">
             <div class="pic this_is_an_image image123321 image456789">
-              <img src="./image/judge_c.jpg" alt="">
+              <picture>
+                <source type="image/webp" srcset="./image/webp/judge_c.webp">
+                <img src="./image/no-webp/judge_c.jpg">
+              </picture>
             </div>
           </li>
           <li class="judge__item judge__item--test judge__item--show">
             <div class="pic this_is_an_image image123321 image456789">
-              <img src="./image/judge_d.jpg" alt="">
+              <picture>
+                <source type="image/webp" srcset="./image/webp/judge_d.webp">
+                <img src="./image/no-webp/judge_d.jpg">
+              </picture>
             </div>
           </li>
           <li class="judge__item judge__item--test judge__item--show">
             <div class="pic this_is_an_image image123321 image456789">
-              <img src="./image/judge_e.jpg" alt="">
+              <picture>
+                <source type="image/webp" srcset="./image/webp/judge_e.webp">
+                <img src="./image/no-webp/judge_e.jpg">
+              </picture>
             </div>
           </li>
           <li class="judge__item judge__item--test judge__item--show">
             <div class="pic this_is_an_image image123321 image456789">
-              <img src="./image/judge_f.jpg" alt="">
+              <picture>
+                <source type="image/webp" srcset="./image/webp/judge_f.webp">
+                <img src="./image/no-webp/judge_f.jpg">
+              </picture>
             </div>
           </li>
           <li class="judge__item judge__item--test judge__item--show">
             <div class="pic this_is_an_image image123321 image456789">
-              <img src="./image/judge_g.jpg" alt="">
+              <picture>
+                <source type="image/webp" srcset="./image/webp/judge_g.webp">
+                <img src="./image/no-webp/judge_g.jpg">
+              </picture>
             </div>
           </li>
           <li class="judge__item judge__item--test judge__item--show">
             <div class="pic this_is_an_image image123321 image456789">
-              <img src="./image/judge_h.jpg" alt="">
+              <picture>
+                <source type="image/webp" srcset="./image/webp/judge_f.webp">
+                <img src="./image/no-webp/judge_f.jpg">
+              </picture>
             </div>
           </li>
         </ul>
@@ -288,7 +332,10 @@
         <ul class="judge__gallery">
           <li>
             <div class="pic this_is_an_image image123321 image456789">
-              <img class="lazy" data-src="./image/judge_a_l.jpg" alt="">
+              <picture>
+                <source type="image/webp" data-srcset="./image/webp/judge_a_l.webp">
+                <img class="lazy" data-src="./image/no-webp/judge_a_l.jpg">
+              </picture>
             </div>
             <div class="judge__card">
               <h4 class="judge__card-title">我是不明生物</h4>
@@ -302,7 +349,10 @@
           <!-- item -->
           <li>
             <div class="pic this_is_an_image image123321 image456789">
-              <img class="lazy" data-src="./image/judge_b_l.jpg" alt="">
+              <picture>
+                <source type="image/webp" data-srcset="./image/webp/judge_b_l.webp">
+                <img class="lazy" data-src="./image/no-webp/judge_b_l.jpg">
+              </picture>
             </div>
             <div class="judge__card">
               <h4 class="judge__card-title">巴哥巴哥 pug pug</h4>
@@ -316,7 +366,10 @@
           <!-- item -->
           <li>
             <div class="pic this_is_an_image image123321 image456789">
-              <img class="lazy" data-src="./image/judge_c_l.jpg" alt="">
+              <picture>
+                <source type="image/webp" data-srcset="./image/webp/judge_c_l.webp">
+                <img class="lazy" data-src="./image/no-webp/judge_c_l.jpg">
+              </picture>
             </div>
             <div class="judge__card">
               <h4 class="judge__card-title">本人小萌貓啦</h4>
@@ -330,7 +383,10 @@
           <!-- item -->
           <li>
             <div class="pic this_is_an_image image123321 image456789">
-              <img class="lazy" data-src="./image/judge_d_l.jpg" alt="">
+              <picture>
+                <source type="image/webp" data-srcset="./image/webp/judge_d_l.webp">
+                <img class="lazy" data-src="./image/no-webp/judge_d_l.jpg">
+              </picture>
             </div>
             <div class="judge__card">
               <h4 class="judge__card-title">無尾熊走路超慢你知道嗎</h4>
@@ -344,7 +400,10 @@
           <!-- item -->
           <li>
             <div class="pic this_is_an_image image123321 image456789">
-              <img class="lazy" data-src="./image/judge_e_l.jpg" alt="">
+              <picture>
+                <source type="image/webp" data-srcset="./image/webp/judge_e_l.webp">
+                <img class="lazy" data-src="./image/no-webp/judge_e_l.jpg">
+              </picture>
             </div>
             <div class="judge__card">
               <h4 class="judge__card-title">木柵耍萌扛壩子</h4>
@@ -358,7 +417,10 @@
           <!-- item -->
           <li>
             <div class="pic this_is_an_image image123321 image456789">
-              <img class="lazy" data-src="./image/judge_f_l.jpg" alt="">
+              <picture>
+                <source type="image/webp" data-srcset="./image/webp/judge_f_l.webp">
+                <img class="lazy" data-src="./image/no-webp/judge_f_l.jpg">
+              </picture>
             </div>
             <div class="judge__card">
               <h4 class="judge__card-title">馬馬很危險喔</h4>
@@ -372,7 +434,10 @@
           <!-- item -->
           <li>
             <div class="pic this_is_an_image image123321 image456789">
-              <img class="lazy" data-src="./image/judge_g_l.jpg" alt="">
+              <picture>
+                <source type="image/webp" data-srcset="./image/webp/judge_g_l.webp">
+                <img class="lazy" data-src="./image/no-webp/judge_g_l.jpg">
+              </picture>
             </div>
             <div class="judge__card">
               <h4 class="judge__card-title">熊熊沒事做</h4>
@@ -386,7 +451,10 @@
           <!-- item -->
           <li>
             <div class="pic this_is_an_image image123321 image456789">
-              <img class="lazy" data-src="./image/judge_h_l.jpg" alt="">
+              <picture>
+                <source type="image/webp" data-srcset="./image/webp/judge_h_l.webp">
+                <img class="lazy" data-src="./image/no-webp/judge_h_l.jpg">
+              </picture>
             </div>
             <div class="judge__card">
               <h4 class="judge__card-title">你～說～什～毛～</h4>
