@@ -25,7 +25,8 @@ gulp.task('html-minify', () => {
 });
 
 gulp.task('css', () => {
-  return gulp.src('src/*.css')
+  return gulp.src('css/style.css')
+    .pipe(postcss([autoprefixer()]))
     .pipe(cssnano())
     .pipe(gulp.dest('dist'));
 });
