@@ -81,7 +81,7 @@ $breakpoints: ("phone": 375px, "phone-l": 480px, "tablet-s": 640px, "tablet": 76
     display: $icon-type;
     background-color: $icon-color;
     mask-size: cover;
-    mask-image: url('./../image/'+ $icon-url);
+    mask-image: url('./../image/no-webp/'+ $icon-url);
 }
 
 
