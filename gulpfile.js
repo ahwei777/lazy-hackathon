@@ -8,21 +8,21 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('gulp-cssnano');
 
-const minify = require("gulp-babel-minify");
-
-const babel = require('gulp-babel'); // 載入 gulp-babel 套件
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
+
+const minify = require("gulp-babel-minify"); // 會出錯
+const babel = require('gulp-babel'); // 載入 gulp-babel 套件
+const uglify = require('gulp-uglify'); // 不支援 ES6 還要先用 babel 處理
+const terser = require('gulp-terser');
 
 const tinypng = require('gulp-tinypng-compress');
 
 const webp = require('gulp-webp');
 
-const uncss = require('gulp-uncss');
-const postcss_uncss = require('postcss-uncss')
+const uncss = require('postcss-uncss')
 
-gulp.task('html-minify', () => {
-  return gulp.src('src/*.html')
+gulp.task('html', () => {
+  return gulp.src('index-unminify.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('dist'));
 });
@@ -35,7 +35,7 @@ gulp.task('css-nano', () => {
 
 gulp.task('uncss', () => {
   return gulp.src('css/bootstrap.css')
-    .pipe(postcss([postcss_uncss(
+    .pipe(postcss([uncss(
       {
         html: ['./index.html'], //檢查的頁面(網址也可)
       }
@@ -45,16 +45,17 @@ gulp.task('uncss', () => {
 
 gulp.task('css-all', () => {
   return gulp.src('css/*.css')
-    .pipe(postcss([autoprefixer()]))
+
     .pipe(cssnano())
     .pipe(concat('main.css'))
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task("js-minify", () => {
-  return gulp.src('src/typed.js')
-  .pipe(uglify())
-  .pipe(gulp.dest('dist'))
+gulp.task('js-all', () => {
+  return gulp.src('src/*.js')
+    .pipe(terser())
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('tinypng', function () {
