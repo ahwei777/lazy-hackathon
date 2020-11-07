@@ -18,24 +18,36 @@ const tinypng = require('gulp-tinypng-compress');
 
 const webp = require('gulp-webp');
 
+const uncss = require('gulp-uncss');
+const postcss_uncss = require('postcss-uncss')
+
 gulp.task('html-minify', () => {
   return gulp.src('src/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('css', () => {
-  return gulp.src('css/style.css')
-    .pipe(postcss([autoprefixer()]))
+gulp.task('css-nano', () => {
+  return gulp.src('dist/main.css')
     .pipe(cssnano())
+    .pipe(gulp.dest('dist/main-min.css'));
+});
+
+gulp.task('uncss', () => {
+  return gulp.src('css/bootstrap.css')
+    .pipe(postcss([postcss_uncss(
+      {
+        html: ['./index.html'], //檢查的頁面(網址也可)
+      }
+    )]))
     .pipe(gulp.dest('dist'));
 });
 
 gulp.task('css-all', () => {
-  return gulp.src('src/*.css')
+  return gulp.src('css/*.css')
     .pipe(postcss([autoprefixer()]))
     .pipe(cssnano())
-    .pipe(concat('all.css'))
+    .pipe(concat('main.css'))
     .pipe(gulp.dest('dist'));
 });
 
