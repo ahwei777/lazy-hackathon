@@ -13,7 +13,7 @@ const concat = require('gulp-concat');
 const minify = require("gulp-babel-minify"); // 會出錯
 const babel = require('gulp-babel'); // 載入 gulp-babel 套件
 const uglify = require('gulp-uglify'); // 不支援 ES6 還要先用 babel 處理
-const terser = require('gulp-terser');
+const terser = require('gulp-terser'); // 壓縮 JS
 
 const tinypng = require('gulp-tinypng-compress');
 
@@ -45,7 +45,7 @@ gulp.task('uncss', () => {
 
 gulp.task('css-all', () => {
   return gulp.src('css/*.css')
-
+    .pipe(postcss([autoprefixer()])) // 將編譯完成的 CSS 做 PostCSS 處理
     .pipe(cssnano())
     .pipe(concat('main.css'))
     .pipe(gulp.dest('dist'));
